@@ -19,8 +19,20 @@
 
   <main class="invite-card">
 
-    <header class="section intro-section">
+    <div class="floating-elements" aria-hidden="true">
+      <span class="animated-item butterfly b1">🦋</span>
+      <span class="animated-item butterfly b2">🦋</span>
+      <span class="animated-item butterfly b3">🦋</span>
+      <span class="animated-item butterfly b4">🦋</span>
+      <span class="animated-item flower f1">🌸</span>
+      <span class="animated-item flower f2">🌼</span>
+      <span class="animated-item flower f3">✨</span>
+      <span class="animated-item flower f4">🌸</span>
+      <span class="animated-item heart h1">💛</span>
+      <span class="animated-item heart h2">✨</span>
+    </div>
 
+    <header class="section intro-section">
       <div id="guest-box" class="guest-box" style="display: none;">
         <span class="guest-tag">Especialmente para:</span>
         <h3 id="guest-name" class="guest-title">Invitado Especial</h3>
@@ -31,9 +43,12 @@
       <h1 class="person-name">Natividad</h1>
       <div class="divider-gold"></div>
 
-      <a href="#detalles" class="scroll-arrow" aria-label="Ver detalles">
-        <span>↓</span>
-      </a>
+      <div class="arrow-container-right">
+        <a href="#detalles" class="scroll-arrow" aria-label="Bajar a detalles">
+          <span class="arrow-symbol">↓</span>
+          <span class="pulse-ring"></span>
+        </a>
+      </div>
     </header>
 
     <section class="section portrait-section">
@@ -81,8 +96,15 @@
       </div>
     </section>
 
-    <section class="section gift-section">
-      <h2 class="section-title">Tendremos Lluvia de Sobres</h2>
+    <section class="section gift-section" id="sobres">
+      <div class="arrow-container-right arrow-above-gift">
+        <a href="#confirmacion" class="scroll-arrow secondary-arrow" aria-label="Bajar a confirmación">
+          <span class="arrow-symbol">↓</span>
+          <span class="pulse-ring"></span>
+        </a>
+      </div>
+
+      <h2 class="section-title">Lluvia de Sobres</h2>
 
       <div class="gift-icon-container">
         <img src="img/sobre.png" alt="Lluvia de sobres" class="gift-img" onerror="this.style.display='none'; document.getElementById('gift-fallback-icon').style.display='block';">
@@ -94,7 +116,7 @@
       </p>
     </section>
 
-    <footer class="section rsvp-section">
+    <footer class="section rsvp-section" id="confirmacion">
       <p class="rsvp-reminder">Tu presencia engalana nuestra fiesta.</p>
       <p class="rsvp-deadline">Por favor confirma tu asistencia antes del <strong>15 de Noviembre</strong></p>
 
@@ -103,7 +125,7 @@
           <span>🗺️</span> Ver Ubicación
         </a>
 
-        <a id="btn-whatsapp" href="https://wa.me/573175486111?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%2080%20de%20Natividad" target="_blank" class="btn btn-whatsapp">
+        <a id="btn-whatsapp" href="https://wa.me/573118090531?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%2080%20de%20Natividad" target="_blank" class="btn btn-whatsapp">
           <span>💬</span> Confirmar por WhatsApp
         </a>
       </div>
@@ -121,13 +143,13 @@
       const cleanName = decodeURIComponent(guestParam.replace(/\+/g, ' ')).trim();
 
       if (cleanName.length > 0) {
-        // Mostrar recuadro con el nombre
+        // Muestra la tarjeta con el nombre del invitado
         const guestBox = document.getElementById('guest-box');
         const guestName = document.getElementById('guest-name');
         guestName.textContent = cleanName;
         guestBox.style.display = 'block';
 
-        // Personalizar el mensaje de WhatsApp
+        // Modifica el enlace de WhatsApp para que el mensaje salga personalizado
         const waBtn = document.getElementById('btn-whatsapp');
         if (waBtn) {
           const customMsg = encodeURIComponent(`¡Hola! Confirmo la asistencia de ${cleanName} al cumpleaños 80 de Natividad.`);

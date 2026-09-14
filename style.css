@@ -1,4 +1,4 @@
-/* Reseteo general y scroll suave */
+/* Scroll suave y reseteo base */
 html {
   scroll-behavior: smooth;
 }
@@ -20,7 +20,7 @@ body {
   color: #2b241f;
 }
 
-/* Tarjeta principal con la imagen de fondo floral visible */
+/* Tarjeta principal */
 .invite-card {
   width: 100%;
   max-width: 480px;
@@ -35,19 +35,104 @@ body {
   position: relative;
 }
 
-/* Capa semitransparente ligera (0.45) para resaltar flores y bordes dorados */
+/* Capa semitransparente para ver el fondo floral */
 .section {
   position: relative;
-  background: rgba(255, 253, 250, 0.45);
+  background: rgba(255, 253, 250, 0.42);
   backdrop-filter: blur(0.5px);
   padding: 32px 24px;
   text-align: center;
 }
 
+/* Enjambre de iconos voladores */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.animated-item {
+  position: absolute;
+  display: inline-block;
+  user-select: none;
+}
+
+/* Posiciones y ritmos de animación de mariposas */
+.butterfly.b1 { top: 90px; right: 20px; font-size: 1.6rem; animation: flyLoop1 7s ease-in-out infinite; }
+.butterfly.b2 { top: 480px; left: 15px; font-size: 1.4rem; animation: flyLoop2 9s ease-in-out infinite; }
+.butterfly.b3 { top: 880px; right: 25px; font-size: 1.5rem; animation: flyLoop1 8s ease-in-out infinite; }
+.butterfly.b4 { top: 1250px; left: 20px; font-size: 1.3rem; animation: flyLoop2 7.5s ease-in-out infinite; }
+
+/* Posiciones de flores y brillos */
+.flower.f1 { top: 220px; left: 15px; font-size: 1.2rem; animation: floatSway 5s ease-in-out infinite alternate; }
+.flower.f2 { top: 680px; right: 18px; font-size: 1.3rem; animation: floatSway 6s ease-in-out infinite alternate; }
+.flower.f3 { top: 380px; right: 15px; font-size: 1.1rem; animation: sparklePulse 3s ease-in-out infinite; }
+.flower.f4 { top: 1050px; left: 22px; font-size: 1.2rem; animation: floatSway 5.5s ease-in-out infinite alternate; }
+
+.heart.h1 { top: 310px; right: 22px; font-size: 1.1rem; animation: floatSway 4.5s ease-in-out infinite alternate; }
+.heart.h2 { top: 1400px; right: 25px; font-size: 1.2rem; animation: sparklePulse 3.5s ease-in-out infinite; }
+
+@keyframes flyLoop1 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate(-20px, -20px) rotate(-15deg) scale(1.1); }
+  50% { transform: translate(12px, -35px) rotate(12deg) scale(0.95); }
+  75% { transform: translate(-10px, -18px) rotate(-8deg) scale(1.05); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes flyLoop2 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  30% { transform: translate(22px, -24px) rotate(16deg) scale(1.1); }
+  60% { transform: translate(-14px, -40px) rotate(-12deg) scale(0.9); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes floatSway {
+  0% { transform: translateY(0) rotate(-10deg) scale(1); }
+  100% { transform: translateY(-16px) rotate(15deg) scale(1.08); }
+}
+
+@keyframes sparklePulse {
+  0%, 100% { transform: scale(0.85); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
 /* 1. SECCIÓN PORTADA */
 .intro-section {
-  padding-top: 55px;
+  padding-top: 45px;
   padding-bottom: 25px;
+}
+
+.guest-box {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  border-radius: 12px;
+  padding: 10px 18px;
+  margin: 0 auto 20px auto;
+  max-width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.guest-tag {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7d5e2a;
+  font-weight: 600;
+}
+
+.guest-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: #241c16;
+  margin-top: 3px;
+  font-weight: 700;
 }
 
 .gold-subtitle {
@@ -88,41 +173,65 @@ body {
   margin: 16px auto 20px auto;
 }
 
-/* Flecha animada interactiva */
+/* Alineación de flechas al lado derecho */
+.arrow-container-right {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 14px;
+  margin-top: 10px;
+}
+
+.arrow-above-gift {
+  margin-top: -6px;
+  margin-bottom: 12px;
+}
+
+/* Flechas interactivas circulares */
 .scroll-arrow {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  margin-top: 6px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1.5px solid #d4af37;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #d4af37 0%, #a88544 100%);
+  border: 2px solid #ffffff;
   border-radius: 50%;
-  color: #856526;
+  color: #ffffff;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  animation: bounce 1.8s infinite;
-  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 8px 20px rgba(168, 133, 68, 0.45);
+  animation: bounceArrow 1.5s infinite ease-in-out;
+  cursor: pointer;
 }
 
-.scroll-arrow:hover {
-  background: #ffffff;
-  transform: scale(1.1);
+.scroll-arrow .arrow-symbol {
+  display: block;
+  line-height: 1;
+  transform: translateY(-2px);
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(8px);
-  }
-  60% {
-    transform: translateY(4px);
-  }
+.pulse-ring {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  border: 2px solid rgba(212, 175, 55, 0.75);
+  border-radius: 50%;
+  animation: pulseRing 1.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@keyframes bounceArrow {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(10px); }
+  60% { transform: translateY(5px); }
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(0.85); opacity: 1; }
+  100% { transform: scale(1.35); opacity: 0; }
 }
 
 /* 2. SECCIÓN FOTO Y LEYENDA */
@@ -152,10 +261,10 @@ body {
 .legend-box {
   max-width: 350px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.65);
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .legend-quote {
@@ -174,12 +283,7 @@ body {
   font-weight: 500;
 }
 
-/* 3. SECCIÓN DETALLES */
-.event-details {
-  border-top: 1px dashed rgba(212, 175, 55, 0.4);
-}
-
-.details-title {
+.section-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.7rem;
   color: #7d5e2a;
@@ -187,6 +291,11 @@ body {
   letter-spacing: 2px;
   margin-bottom: 20px;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* 3. SECCIÓN DETALLES */
+.event-details {
+  border-top: 1px dashed rgba(212, 175, 55, 0.4);
 }
 
 .details-list {
@@ -234,7 +343,44 @@ body {
   color: #5c4f44;
 }
 
-/* 4. SECCIÓN RSVP Y BOTONES */
+/* 4. SECCIÓN LLUVIA DE SOBRES */
+.gift-section {
+  border-top: 1px dashed rgba(212, 175, 55, 0.4);
+}
+
+.gift-icon-container {
+  margin: 0 auto 14px auto;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gift-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gift-fallback-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.gift-text {
+  max-width: 330px;
+  margin: 0 auto;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #4f4236;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* 5. SECCIÓN CONFIRMACIÓN */
 .rsvp-section {
   border-top: 1px dashed rgba(212, 175, 55, 0.4);
   padding-bottom: 50px;
