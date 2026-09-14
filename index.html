@@ -6,7 +6,7 @@
   <title>Celebración 80 Años - Natividad</title>
 
   <meta property="og:title" content="¡Estás invitado a celebrar los 80 años de Natividad!">
-  <meta property="og:description" content="19 de Diciembre - 3:00 PM. Acompáñanos en este día tan especial.">
+  <meta property="og:description" content="19 de Diciembre - 3:00 PM. Acompáñanos a celebrar esta fecha tan especial.">
   <meta property="og:image" content="img/foto.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,12 @@
   <main class="invite-card">
 
     <header class="section intro-section">
+
+      <div id="guest-box" class="guest-box" style="display: none;">
+        <span class="guest-tag">Especialmente para:</span>
+        <h3 id="guest-name" class="guest-title">Invitado Especial</h3>
+      </div>
+
       <span class="gold-subtitle">CELEBREMOS JUNTOS LOS</span>
       <div class="age-number">80</div>
       <h1 class="person-name">Natividad</h1>
@@ -39,13 +45,13 @@
           «Hay momentos en la vida que son inolvidables, y compartirlos con quienes más queremos los hace eternos.»
         </p>
         <p class="legend-body">
-          Te invitamos a una tarde llena de alegría, recuerdos y agradecimiento en honor a nuestra querida Natividad.
+          Te invitamos a compartir una tarde llena de bendición, gratitud y alegría celebrando la vida de nuestra querida Natividad.
         </p>
       </div>
     </section>
 
     <section class="section event-details" id="detalles">
-      <h2 class="details-title">Detalles del Evento</h2> 
+      <h2 class="section-title">Detalles del Evento</h2>
 
       <div class="details-list">
         <div class="detail-card">
@@ -68,23 +74,36 @@
           <div class="detail-icon">📍</div>
           <div class="detail-info">
             <span class="detail-label">Lugar</span>
-            <p class="detail-val">Finca San Antonio</p>
+            <p class="detail-val">Finca / Salón de Eventos</p>
             <small class="detail-sub">Villeta, Cundinamarca</small>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="section gift-section">
+      <h2 class="section-title">Tendremos Lluvia de Sobres</h2>
+
+      <div class="gift-icon-container">
+        <img src="img/sobres.png" alt="Lluvia de sobres" class="gift-img" onerror="this.style.display='none'; document.getElementById('gift-fallback-icon').style.display='block';">
+        <span id="gift-fallback-icon" class="gift-fallback-icon" style="display: none;">✉️</span>
+      </div>
+
+      <p class="gift-text">
+        Tu compañía y cariño son nuestro mejor regalo. Si deseas tener un detalle con la homenajeada, contaremos con <strong>lluvia de sobres</strong> el día del evento.
+      </p>
+    </section>
+
     <footer class="section rsvp-section">
-      <p class="rsvp-reminder">Tu presencia es nuestro mayor regalo.</p>
+      <p class="rsvp-reminder">Tu presencia engalana nuestra fiesta.</p>
       <p class="rsvp-deadline">Por favor confirma tu asistencia antes del <strong>15 de Noviembre</strong></p>
 
       <div class="action-buttons">
-        <a href="https://maps.app.goo.gl/VpF8sRtWbmwSCur79" target="_blank" class="btn btn-gold">
+        <a href="https://maps.google.com" target="_blank" class="btn btn-gold">
           <span>🗺️</span> Ver Ubicación
         </a>
 
-        <a href="https://wa.me/573118090531?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%2080%20de%20Natividad" target="_blank" class="btn btn-whatsapp">
+        <a id="btn-whatsapp" href="https://wa.me/573175486111?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%2080%20de%20Natividad" target="_blank" class="btn btn-whatsapp">
           <span>💬</span> Confirmar por WhatsApp
         </a>
       </div>
@@ -93,6 +112,30 @@
     </footer>
 
   </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestParam = urlParams.get('n');
+
+    if (guestParam) {
+      const cleanName = decodeURIComponent(guestParam.replace(/\+/g, ' ')).trim();
+
+      if (cleanName.length > 0) {
+        // Mostrar recuadro con el nombre
+        const guestBox = document.getElementById('guest-box');
+        const guestName = document.getElementById('guest-name');
+        guestName.textContent = cleanName;
+        guestBox.style.display = 'block';
+
+        // Personalizar el mensaje de WhatsApp
+        const waBtn = document.getElementById('btn-whatsapp');
+        if (waBtn) {
+          const customMsg = encodeURIComponent(`¡Hola! Confirmo la asistencia de ${cleanName} al cumpleaños 80 de Natividad.`);
+          waBtn.href = `https://wa.me/573118090531?text=${customMsg}`;
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
