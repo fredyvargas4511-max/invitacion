@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Celebración 80 Años - Natividad</title>
 
+  <!-- Metadatos para vista previa en WhatsApp -->
   <meta property="og:title" content="¡Estás invitado a celebrar los 80 años de Natividad!">
   <meta property="og:description" content="19 de Diciembre - 3:00 PM. Acompáñanos a celebrar esta fecha tan especial.">
   <meta property="og:image" content="img/foto.png">
 
+  <!-- Fuentes de Google Fonts (incluye Rouge Script) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&family=Rouge+Script&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -19,30 +21,34 @@
 
   <main class="invite-card">
 
+    <!-- Enjambre de iconos voladores flotantes por toda la tarjeta -->
     <div class="floating-elements" aria-hidden="true">
-      <span class="animated-item butterfly b1">🦋</span>
-      <span class="animated-item butterfly b2">🦋</span>
-      <span class="animated-item butterfly b3">🦋</span>
-      <span class="animated-item butterfly b4">🦋</span>
+      <span class="animated-item butterfly b1">🌺</span>
+      <span class="animated-item butterfly b2">🌻</span>
+      <span class="animated-item butterfly b3">💐</span>
+      <span class="animated-item butterfly b4">🌺</span>
       <span class="animated-item flower f1">🌸</span>
-      <span class="animated-item flower f2">🌼</span>
+      <span class="animated-item flower f2">🌷</span>
       <span class="animated-item flower f3">✨</span>
       <span class="animated-item flower f4">🌸</span>
-      <span class="animated-item heart h1">💛</span>
+      <span class="animated-item heart h1">🩷</span>
       <span class="animated-item heart h2">✨</span>
     </div>
 
+    <!-- SECCIÓN 1: BIENVENIDA Y PERSONALIZACIÓN DINÁMICA -->
     <header class="section intro-section">
+      <!-- Caja de invitado dinámico (?n=Nombre) -->
       <div id="guest-box" class="guest-box" style="display: none;">
         <span class="guest-tag">Especialmente para:</span>
         <h3 id="guest-name" class="guest-title">Invitado Especial</h3>
       </div>
 
-      <span class="gold-subtitle">CELEBREMOS JUNTOS LOS</span>
-      <div class="age-number">80</div>
-      <h1 class="person-name">Natividad</h1>
+      <span class="gold-subtitle">Acompáñanos a celebrar los</span>
+      <div class="age-number">80 Años de Naty</div>
+      <h1 class="person-name"></h1>
       <div class="divider-gold"></div>
 
+      <!-- Contenedor alineado a la derecha para la flecha 1 -->
       <div class="arrow-container-right">
         <a href="#detalles" class="scroll-arrow" aria-label="Bajar a detalles">
           <span class="arrow-symbol">↓</span>
@@ -51,20 +57,22 @@
       </div>
     </header>
 
+    <!-- SECCIÓN 2: FOTO Y LEYENDA -->
     <section class="section portrait-section">
       <div class="photo-frame">
         <img src="img/foto.png" alt="Natividad" class="photo">
       </div>
       <div class="legend-box">
         <p class="legend-quote">
-          «Hay momentos en la vida que son inolvidables, y compartirlos con quienes más queremos los hace eternos.»
+          «Ochenta años son ochenta primaveras sembrando amor en cada uno de nosotros. Naty, eres la raíz que nos sostiene y el ejemplo de bondad que guía nuestros pasos. Hoy no solo festejamos tu cumpleaños, sino el privilegio de caminar a tu lado y aprender de tu inmensa sabiduría. Que la vida te siga abrazando con salud, paz y todo el amor de tu familia. ¡Feliz 80 aniversario!»
         </p>
         <p class="legend-body">
-          Te invitamos a compartir una tarde llena de bendición, gratitud y alegría celebrando la vida de nuestra querida Natividad.
+          Te invitamos a compartir una tarde llena de bendición, gratitud y alegría celebrando la vida de nuestra querida Naty.
         </p>
       </div>
     </section>
 
+    <!-- SECCIÓN 3: FECHA, HORA Y LUGAR -->
     <section class="section event-details" id="detalles">
       <h2 class="section-title">Detalles del Evento</h2>
 
@@ -96,7 +104,9 @@
       </div>
     </section>
 
+    <!-- SECCIÓN 4: LLUVIA DE SOBRES -->
     <section class="section gift-section" id="sobres">
+      <!-- Flecha 2 ENCIMA de la lluvia de sobres y alineada a la derecha -->
       <div class="arrow-container-right arrow-above-gift">
         <a href="#confirmacion" class="scroll-arrow secondary-arrow" aria-label="Bajar a confirmación">
           <span class="arrow-symbol">↓</span>
@@ -116,16 +126,17 @@
       </p>
     </section>
 
+    <!-- SECCIÓN 5: CONFIRMACIÓN Y BOTONES -->
     <footer class="section rsvp-section" id="confirmacion">
-      <p class="rsvp-reminder">Tu presencia engalana nuestra bella fiesta.</p>
+      <p class="rsvp-reminder">Tu presencia engalana nuestra fiesta.</p>
       <p class="rsvp-deadline">Por favor confirma tu asistencia antes del <strong>15 de Noviembre</strong></p>
 
       <div class="action-buttons">
-        <a href="https://maps.app.goo.gl/8xYeyvQGwHyiFUXd8" target="_blank" class="btn btn-gold">
+        <a href="https://maps.google.com" target="_blank" class="btn btn-rose-gold">
           <span>🗺️</span> Ver Ubicación
         </a>
 
-        <a id="btn-whatsapp" href="https://wa.me/573118090531?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%2080%20de%20Natividad" target="_blank" class="btn btn-whatsapp">
+        <a id="btn-whatsapp" href="https://wa.me/573175486111?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%2080%20de%20Natividad" target="_blank" class="btn btn-whatsapp">
           <span>💬</span> Confirmar por WhatsApp
         </a>
       </div>
@@ -135,6 +146,7 @@
 
   </main>
 
+  <!-- Script para la personalización de cada invitado -->
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const guestParam = urlParams.get('n');
@@ -143,17 +155,15 @@
       const cleanName = decodeURIComponent(guestParam.replace(/\+/g, ' ')).trim();
 
       if (cleanName.length > 0) {
-        // Muestra la tarjeta con el nombre del invitado
         const guestBox = document.getElementById('guest-box');
         const guestName = document.getElementById('guest-name');
         guestName.textContent = cleanName;
         guestBox.style.display = 'block';
 
-        // Modifica el enlace de WhatsApp para que el mensaje salga personalizado
         const waBtn = document.getElementById('btn-whatsapp');
         if (waBtn) {
           const customMsg = encodeURIComponent(`¡Hola! Confirmo la asistencia de ${cleanName} al cumpleaños 80 de Natividad.`);
-          waBtn.href = `https://wa.me/573118090531?text=${customMsg}`;
+          waBtn.href = `https://wa.me/573175486111?text=${customMsg}`;
         }
       }
     }

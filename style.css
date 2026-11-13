@@ -9,36 +9,39 @@ html {
   padding: 0;
 }
 
+/* Fondo exterior en tono palo de rosa profundo */
 body {
   min-height: 100vh;
-  background-color: #231f1c;
+  background-color: #3d282c;
+  background-image: radial-gradient(circle at top, #54383e 0%, #2d1d20 100%);
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 20px 12px;
   font-family: 'Montserrat', sans-serif;
-  color: #2b241f;
+  color: #3b282b;
 }
 
-/* Tarjeta principal */
+/* Tarjeta principal con base rosa empolvado suave y borde dorado */
 .invite-card {
   width: 100%;
   max-width: 480px;
-  background-color: #fffdfa;
+  background-color: #fdf5f6;
   background-image: url('img/fondo.jpg');
   background-repeat: repeat-y;
   background-position: top center;
   background-size: 100% auto;
+  border: 2px solid rgba(212, 175, 55, 0.55);
   border-radius: 20px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 18px 40px rgba(34, 18, 21, 0.55);
   overflow: hidden;
   position: relative;
 }
 
-/* Capa semitransparente para ver el fondo floral */
+/* Capa semitransparente con matiz palo de rosa claro */
 .section {
   position: relative;
-  background: rgba(255, 253, 250, 0.42);
+  background: rgba(253, 244, 245, 0.52);
   backdrop-filter: blur(0.5px);
   padding: 32px 24px;
   text-align: center;
@@ -102,20 +105,20 @@ body {
   50% { transform: scale(1.2); opacity: 1; }
 }
 
-/* 1. SECCIÓN PORTADA */
+/* 1. SECCIÓN PORTADA CON ROUGE SCRIPT */
 .intro-section {
   padding-top: 45px;
   padding-bottom: 25px;
 }
 
 .guest-box {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(212, 175, 55, 0.6);
+  background: rgba(255, 250, 251, 0.92);
+  border: 1.5px solid #d4af37;
   border-radius: 12px;
   padding: 10px 18px;
   margin: 0 auto 20px auto;
   max-width: 320px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 14px rgba(176, 114, 125, 0.16);
 }
 
 .guest-tag {
@@ -123,53 +126,56 @@ body {
   font-size: 0.72rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #7d5e2a;
+  color: #a66370;
   font-weight: 600;
 }
 
 .guest-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.6rem;
-  color: #241c16;
+  color: #4a2c32;
   margin-top: 3px;
   font-weight: 700;
 }
 
 .gold-subtitle {
   display: block;
-  font-size: 0.8rem;
-  letter-spacing: 4px;
-  color: #7d5e2a;
-  font-weight: 600;
-  margin-bottom: 6px;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  font-family: 'Rouge Script', cursive;
+  font-size: 2.1rem;
+  letter-spacing: 1px;
+  text-transform: none;
+  color: #9e5c68;
+  font-weight: 400;
+  margin-bottom: 2px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .age-number {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 5rem;
-  font-weight: 700;
-  line-height: 1;
-  background: linear-gradient(135deg, #856526 0%, #d4af37 50%, #6d4f19 100%);
+  font-family: 'Rouge Script', cursive;
+  font-size: 5.8rem;
+  font-weight: 400;
+  line-height: 0.95;
+  background: linear-gradient(135deg, #9c752b 0%, #e0be53 45%, #b56576 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 2px 0 6px 0;
-  filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.6));
+  margin: 4px 0 8px 0;
+  padding: 0 14px;
+  filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.7));
 }
 
 .person-name {
-  font-family: 'Pinyon Script', cursive;
-  font-size: 4rem;
+  font-family: 'Rouge Script', cursive;
+  font-size: 4.5rem;
   font-weight: 400;
-  color: #241c16;
-  line-height: 1.1;
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
+  color: #4a2c32;
+  line-height: 1.05;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
 }
 
 .divider-gold {
-  width: 70px;
+  width: 80px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  background: linear-gradient(90deg, transparent, #d4af37, #c9828e, transparent);
   margin: 16px auto 20px auto;
 }
 
@@ -194,14 +200,14 @@ body {
   justify-content: center;
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #d4af37 0%, #a88544 100%);
+  background: linear-gradient(135deg, #d4af37 0%, #c47d89 100%);
   border: 2px solid #ffffff;
   border-radius: 50%;
   color: #ffffff;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
-  box-shadow: 0 8px 20px rgba(168, 133, 68, 0.45);
+  box-shadow: 0 8px 20px rgba(181, 101, 118, 0.4);
   animation: bounceArrow 1.5s infinite ease-in-out;
   cursor: pointer;
 }
@@ -218,7 +224,7 @@ body {
   left: -7px;
   right: -7px;
   bottom: -7px;
-  border: 2px solid rgba(212, 175, 55, 0.75);
+  border: 2px solid rgba(201, 130, 142, 0.75);
   border-radius: 50%;
   animation: pulseRing 1.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -236,7 +242,7 @@ body {
 
 /* 2. SECCIÓN FOTO Y LEYENDA */
 .portrait-section {
-  border-top: 1px dashed rgba(212, 175, 55, 0.4);
+  border-top: 1px dashed rgba(201, 130, 142, 0.45);
   padding-top: 25px;
 }
 
@@ -245,10 +251,11 @@ body {
   max-width: 320px;
   margin: 0 auto 20px auto;
   border: 10px solid #ffffff;
+  outline: 2px solid rgba(212, 175, 55, 0.6);
   border-radius: 8px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 24px rgba(138, 79, 90, 0.18);
   overflow: hidden;
-  background-color: #eee;
+  background-color: #f7e8ea;
 }
 
 .photo-frame .photo {
@@ -261,10 +268,10 @@ body {
 .legend-box {
   max-width: 350px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 250, 251, 0.82);
   padding: 16px;
   border-radius: 12px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.45);
 }
 
 .legend-quote {
@@ -272,30 +279,30 @@ body {
   font-style: italic;
   font-size: 1.25rem;
   line-height: 1.45;
-  color: #382e26;
+  color: #543138;
   margin-bottom: 10px;
 }
 
 .legend-body {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #52463b;
+  color: #69454c;
   font-weight: 500;
 }
 
 .section-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.7rem;
-  color: #7d5e2a;
+  color: #9e5c68;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 20px;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 /* 3. SECCIÓN DETALLES */
 .event-details {
-  border-top: 1px dashed rgba(212, 175, 55, 0.4);
+  border-top: 1px dashed rgba(201, 130, 142, 0.45);
 }
 
 .details-list {
@@ -310,12 +317,13 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: rgba(255, 250, 251, 0.92);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-left: 4px solid #c9828e;
   border-radius: 12px;
   padding: 14px 18px;
   text-align: left;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(138, 79, 90, 0.08);
 }
 
 .detail-icon {
@@ -327,31 +335,31 @@ body {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #7d5e2a;
+  color: #a3626e;
   font-weight: 600;
 }
 
 .detail-info .detail-val {
   font-size: 0.98rem;
   font-weight: 600;
-  color: #241c16;
+  color: #4a2c32;
   margin-top: 2px;
 }
 
 .detail-info .detail-sub {
   font-size: 0.8rem;
-  color: #5c4f44;
+  color: #755057;
 }
 
 /* 4. SECCIÓN LLUVIA DE SOBRES */
 .gift-section {
-  border-top: 1px dashed rgba(212, 175, 55, 0.4);
+  border-top: 1px dashed rgba(201, 130, 142, 0.45);
 }
 
 .gift-icon-container {
   margin: 0 auto 14px auto;
-  width: 320px;
-  height: 320px;
+  width: 240px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -373,30 +381,30 @@ body {
   margin: 0 auto;
   font-size: 0.92rem;
   line-height: 1.6;
-  color: #4f4236;
-  background: rgba(255, 255, 255, 0.75);
+  color: #5c3a40;
+  background: rgba(255, 250, 251, 0.82);
   padding: 14px 18px;
   border-radius: 12px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.45);
 }
 
 /* 5. SECCIÓN CONFIRMACIÓN */
 .rsvp-section {
-  border-top: 1px dashed rgba(212, 175, 55, 0.4);
+  border-top: 1px dashed rgba(201, 130, 142, 0.45);
   padding-bottom: 50px;
 }
 
 .rsvp-reminder {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
-  color: #382e26;
+  color: #543138;
   font-style: italic;
   margin-bottom: 4px;
 }
 
 .rsvp-deadline {
   font-size: 0.85rem;
-  color: #594d42;
+  color: #6e4850;
   margin-bottom: 22px;
 }
 
@@ -426,20 +434,22 @@ body {
   transform: scale(0.97);
 }
 
-.btn-gold {
-  background: linear-gradient(135deg, #d4af37 0%, #9e7b39 100%);
+.btn-rose-gold {
+  background: linear-gradient(135deg, #d4af37 0%, #c47d89 100%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(158, 123, 57, 0.35);
+  box-shadow: 0 4px 14px rgba(196, 125, 137, 0.4);
 }
 
 .btn-whatsapp {
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  background: linear-gradient(135deg, #b56576 0%, #8f4756 100%);
+  border: 1.5px solid #d4af37;
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 4px 14px rgba(143, 71, 86, 0.4);
 }
 
 .closing-phrase {
-  font-family: 'Pinyon Script', cursive;
-  font-size: 2.1rem;
-  color: #7d5e2a;
+  font-family: 'Rouge Script', cursive;
+  font-size: 2.5rem;
+  color: #9e5c68;
 }
